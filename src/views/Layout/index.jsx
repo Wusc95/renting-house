@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // 导入路由
-import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import {Route, Switch, Redirect } from 'react-router-dom'
 // 导入样式
 import styles from './index.module.scss'
 // 导入组件
@@ -9,7 +9,6 @@ import Home from '../Home'
 import My from '../My'
 import News from '../News'
 import HoustList from '../HoustList'
-
 // 导入ant组件
 import { TabBar } from 'antd-mobile'
 export default class Layout extends Component {

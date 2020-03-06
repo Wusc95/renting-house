@@ -8,6 +8,8 @@ import './assets/fonts/iconfont.css'
 import Layout from './views/Layout'
 import Login from './views/Login'
 import NotFound from './views/NotFound'
+import CityList from './views/CityList'
+
 export default class App extends Component {
   render() {
     return (
@@ -15,6 +17,7 @@ export default class App extends Component {
         <Switch>
             <Route path='/layout' component={Layout} />
             <Route path='/login' component={Login} />
+            <Route path='/citylist' component={CityList} />
 
             <Redirect exact path='/' to='/layout' />
             <Route component={NotFound} />
