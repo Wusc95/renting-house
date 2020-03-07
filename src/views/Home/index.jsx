@@ -15,6 +15,8 @@ import nav2 from '../../assets/images/nav-2.png'
 import nav3 from '../../assets/images/nav-3.png'
 import nav4 from '../../assets/images/nav-4.png'
 
+// 导入获取当前城市的方法
+import {getCurrentCity} from  '../../util/city'
 // 导入封装组件searchBar
 import SearchBar from '../../components/SearchBar'
 class Home extends Component {
@@ -27,10 +29,17 @@ class Home extends Component {
             // 租房小组数据
             HouseGroup: null,
             // 资讯数据
-            NewsData: null
+            NewsData: null,
+            // 当前城市
+            currentCity : '深圳'
         }
     }
-    componentDidMount() {
+    async componentDidMount() {
+        //获取当前城市
+        const city = await getCurrentCity();
+        this.setState({
+            currentCity:city.label
+        })
         this.getSwiperData()
         this.getHouseGroups()
         this.getNewsData()
@@ -167,7 +176,7 @@ class Home extends Component {
         return (
             <div className={styles.root}>
                 {/* 搜索框组件 */}
-                <SearchBar cityName={'背景'}/>
+                <SearchBar cityName={this.state.currentCity}/>
                 {/* 渲染轮播图 */}
                 {SwipeData && this.renderSwiper()}
                 {/* 渲染导航菜单 */}

@@ -7,7 +7,7 @@ import styles from './index.module.scss'
 import { Flex } from 'antd-mobile'
 
 // 导入高阶组件
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 class SearchBar extends Component {
     render() {
         return (

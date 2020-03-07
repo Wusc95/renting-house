@@ -5,3 +5,5 @@ axios.defaults.baseURL = BASE_URL
 
 //挂载到Component上
 Component.prototype.axios=axios;
+
+export {axios}
